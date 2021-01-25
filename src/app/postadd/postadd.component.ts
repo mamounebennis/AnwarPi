@@ -23,7 +23,7 @@ export class PostaddComponent implements OnInit {
   }
 
   onRegisterforum(value: any) {
-    this.service.addtheme("http://localhost:7000/api/post/create/"+this.moii,value)
+    this.service.addtheme("https://forumbennis.herokuapp.com/api/post/create/"+this.moii,value)
       .subscribe(data => {
         Swal.fire({
           position: 'top-end',

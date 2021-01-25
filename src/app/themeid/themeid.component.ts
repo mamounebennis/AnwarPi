@@ -24,7 +24,7 @@ export class ThemeidComponent implements OnInit {
     localStorage.removeItem('id');
     localStorage.setItem("id", this.route.snapshot.params.id);
 
-    this.service.get("http://localhost:7000/api/themes/"+this.route.snapshot.params.id)
+    this.service.get("https://forumbennis.herokuapp.com/api/themes/"+this.route.snapshot.params.id)
       .subscribe(data => {
         this.zeze = data;
       },  err => {

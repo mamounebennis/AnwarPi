@@ -18,7 +18,7 @@ export class CommentaireComponent implements OnInit {
   constructor(private service:ServiceService,private router:Router,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.service.get("http://localhost:7000/api/comments/"+this.route.snapshot.params.id)
+    this.service.get("https://forumbennis.herokuapp.com/api/comments/"+this.route.snapshot.params.id)
       .subscribe(data => {
         this.comment = data;
       },  err => {
@@ -29,7 +29,7 @@ export class CommentaireComponent implements OnInit {
   }
 
   Chercher(){
-    this.service.get("http://localhost:7000/api/comments/"+this.route.snapshot.params.id)
+    this.service.get("https://forumbennis.herokuapp.com/api/comments/"+this.route.snapshot.params.id)
       .subscribe(data => {
         this.comment = data;
       },  err => {
@@ -40,7 +40,7 @@ export class CommentaireComponent implements OnInit {
 
   onRegistercours() {
     let info = {"message": this.message};
-    this.service.addtheme("http://localhost:7000/api/comment/create/"+this.route.snapshot.params.id,info)
+    this.service.addtheme("https://forumbennis.herokuapp.com/api/comment/create/"+this.route.snapshot.params.id,info)
       .subscribe(data => {
         this.Chercher();
       },  err => {

@@ -12,11 +12,11 @@ export class ServiceService {
   }
 
   login(user){
-    return this.httpClient.post("http://localhost:7000/api/signin",user,{ observe: 'response'
+    return this.httpClient.post("https://forumbennis.herokuapp.com/api/signin",user,{ observe: 'response'
     });
   }
   register(user){
-    return this.httpClient.post("http://localhost:7000/api/signup",user);
+    return this.httpClient.post("https://forumbennis.herokuapp.com/api/signup",user);
   }
 
   public get(url){
@@ -33,7 +33,7 @@ export class ServiceService {
   }
 
   logout(){
-    return this.httpClient.get("http://localhost:7000/api/signout");
+    return this.httpClient.get("https://forumbennis.herokuapp.com/api/signout");
   }
 
 }

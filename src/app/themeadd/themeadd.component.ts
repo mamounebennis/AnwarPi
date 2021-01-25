@@ -21,7 +21,7 @@ export class ThemeaddComponent implements OnInit {
   }
 
   onRegisterforum(value: any) {
-    this.service.addtheme("http://localhost:7000/api/theme/create/"+this.moii,value)
+    this.service.addtheme("https://forumbennis.herokuapp.com/api/theme/create/"+this.moii,value)
       .subscribe(data => {
         Swal.fire({
           position: 'top-end',
@@ -37,7 +37,7 @@ export class ThemeaddComponent implements OnInit {
   }
 
   chercher() {
-    this.service.get("http://localhost:7000/api/themes/"+this.moii)
+    this.service.get("https://forumbennis.herokuapp.com/api/themes/"+this.moii)
       .subscribe(data => {
       },  err => {
         console.log(err);

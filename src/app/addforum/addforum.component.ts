@@ -28,7 +28,7 @@ export class AddforumComponent implements OnInit {
   }
 
   onRegisterforum(value: any) {
-    this.service.addtheme("http://localhost:7000/api/form/create",value)
+    this.service.addtheme("https://forumbennis.herokuapp.com/api/form/create",value)
       .subscribe(data => {
         Swal.fire({
           position: 'top-end',

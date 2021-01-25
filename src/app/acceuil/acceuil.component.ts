@@ -22,7 +22,7 @@ export class AcceuilComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.service.get("http://localhost:7000/api/forms")
+    this.service.get("https://forumbennis.herokuapp.com/api/forms")
       .subscribe(data => {
         this.ben = data;
       },  err => {

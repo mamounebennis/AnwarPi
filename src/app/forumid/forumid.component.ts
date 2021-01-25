@@ -18,7 +18,7 @@ export class ForumidComponent implements OnInit {
   constructor(private service:ServiceService,private router:Router,private route: ActivatedRoute,private modalService: BsModalService) { }
 
   ngOnInit(): void {
-    this.service.get("http://localhost:7000/api/posts/"+this.route.snapshot.params.id)
+    this.service.get("https://forumbennis.herokuapp.com/api/posts/"+this.route.snapshot.params.id)
       .subscribe(data => {
         this.zeze = data;
       },  err => {
@@ -28,7 +28,7 @@ export class ForumidComponent implements OnInit {
     localStorage.removeItem('idpost');
     localStorage.setItem("idpost", this.route.snapshot.params.id);
 
-    this.service.get("http://localhost:7000/api/posts")
+    this.service.get("https://forumbennis.herokuapp.com/api/posts")
       .subscribe(data => {
         this.wawa = data;
       },  err => {
