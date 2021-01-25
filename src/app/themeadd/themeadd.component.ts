@@ -31,17 +31,11 @@ export class ThemeaddComponent implements OnInit {
           showConfirmButton: false,
           timer: 1500
         });
-        this.chercher();
+        window.location.reload();
       },  err => {
         console.log(err);
       });
   }
 
-  chercher() {
-    this.service.get(environment.baseURL+"api/themes/"+this.moii)
-      .subscribe(data => {
-      },  err => {
-        console.log(err);
-      });
-  }
+
 }

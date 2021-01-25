@@ -38,7 +38,8 @@ export class AddforumComponent implements OnInit {
           showConfirmButton: false,
           timer: 1500
         });
-        this.router.navigateByUrl("/acceuil");
+        window.location.reload();
+
       },  err => {
         console.log(err);
       });
