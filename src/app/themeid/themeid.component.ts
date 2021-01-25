@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {AddforumComponent} from "../addforum/addforum.component";
 import {BsModalRef, BsModalService} from "ngx-bootstrap/modal";
 import {ThemeaddComponent} from "../themeadd/themeadd.component";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-themeid',
@@ -24,7 +25,7 @@ export class ThemeidComponent implements OnInit {
     localStorage.removeItem('id');
     localStorage.setItem("id", this.route.snapshot.params.id);
 
-    this.service.get("https://forumbennis.herokuapp.com/api/themes/"+this.route.snapshot.params.id)
+    this.service.get(environment.baseURL+"api/themes/"+this.route.snapshot.params.id)
       .subscribe(data => {
         this.zeze = data;
       },  err => {

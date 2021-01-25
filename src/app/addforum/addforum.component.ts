@@ -4,6 +4,7 @@ import {BsModalRef, BsModalService} from "ngx-bootstrap/modal";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ServiceService} from "../Service/service.service";
 import Swal from 'sweetalert2/dist/sweetalert2.js'
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-addforum',
@@ -28,7 +29,7 @@ export class AddforumComponent implements OnInit {
   }
 
   onRegisterforum(value: any) {
-    this.service.addtheme("https://forumbennis.herokuapp.com/api/form/create",value)
+    this.service.addtheme(environment.baseURL+"api/form/create",value)
       .subscribe(data => {
         Swal.fire({
           position: 'top-end',

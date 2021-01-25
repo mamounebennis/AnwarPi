@@ -4,6 +4,7 @@ import {ServiceService} from "../Service/service.service";
 import {ThemeaddComponent} from "../themeadd/themeadd.component";
 import {PostaddComponent} from "../postadd/postadd.component";
 import {BsModalRef, BsModalService} from "ngx-bootstrap/modal";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-forumid',
@@ -18,7 +19,7 @@ export class ForumidComponent implements OnInit {
   constructor(private service:ServiceService,private router:Router,private route: ActivatedRoute,private modalService: BsModalService) { }
 
   ngOnInit(): void {
-    this.service.get("https://forumbennis.herokuapp.com/api/posts/"+this.route.snapshot.params.id)
+    this.service.get(environment.baseURL+"api/posts/"+this.route.snapshot.params.id)
       .subscribe(data => {
         this.zeze = data;
       },  err => {
@@ -28,7 +29,7 @@ export class ForumidComponent implements OnInit {
     localStorage.removeItem('idpost');
     localStorage.setItem("idpost", this.route.snapshot.params.id);
 
-    this.service.get("https://forumbennis.herokuapp.com/api/posts")
+    this.service.get(environment.baseURL+"api/posts")
       .subscribe(data => {
         this.wawa = data;
       },  err => {

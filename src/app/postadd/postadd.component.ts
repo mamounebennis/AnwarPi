@@ -3,6 +3,7 @@ import {BsModalRef} from "ngx-bootstrap/modal";
 import {ServiceService} from "../Service/service.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import Swal from 'sweetalert2/dist/sweetalert2.js'
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-postadd',
@@ -23,7 +24,7 @@ export class PostaddComponent implements OnInit {
   }
 
   onRegisterforum(value: any) {
-    this.service.addtheme("https://forumbennis.herokuapp.com/api/post/create/"+this.moii,value)
+    this.service.addtheme(environment.baseURL+"api/post/create/"+this.moii,value)
       .subscribe(data => {
         Swal.fire({
           position: 'top-end',

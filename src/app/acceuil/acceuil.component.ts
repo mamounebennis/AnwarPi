@@ -5,6 +5,7 @@ import {BsModalRef, BsModalService} from "ngx-bootstrap/modal";
 import {CommentaireComponent} from "../commentaire/commentaire.component";
 import {AddforumComponent} from "../addforum/addforum.component";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-acceuil',
@@ -22,7 +23,7 @@ export class AcceuilComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.service.get("https://forumbennis.herokuapp.com/api/forms")
+    this.service.get(environment.baseURL+"api/forms")
       .subscribe(data => {
         this.ben = data;
       },  err => {

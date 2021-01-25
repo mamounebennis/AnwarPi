@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +13,11 @@ export class ServiceService {
   }
 
   login(user){
-    return this.httpClient.post("https://forumbennis.herokuapp.com/api/signin",user,{ observe: 'response'
+    return this.httpClient.post(environment.baseURL+"api/signin",user,{ observe: 'response'
     });
   }
   register(user){
-    return this.httpClient.post("https://forumbennis.herokuapp.com/api/signup",user);
+    return this.httpClient.post(environment.baseURL+"api/signup",user);
   }
 
   public get(url){

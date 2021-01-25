@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ServiceService} from "../Service/service.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {BsModalRef, BsModalService} from "ngx-bootstrap/modal";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-commentaire',
@@ -29,7 +30,7 @@ export class CommentaireComponent implements OnInit {
   }
 
   Chercher(){
-    this.service.get("https://forumbennis.herokuapp.com/api/comments/"+this.route.snapshot.params.id)
+    this.service.get(environment.baseURL+"api/comments/"+this.route.snapshot.params.id)
       .subscribe(data => {
         this.comment = data;
       },  err => {
@@ -40,7 +41,7 @@ export class CommentaireComponent implements OnInit {
 
   onRegistercours() {
     let info = {"message": this.message};
-    this.service.addtheme("https://forumbennis.herokuapp.com/api/comment/create/"+this.route.snapshot.params.id,info)
+    this.service.addtheme(environment.baseURL+"api/comment/create/"+this.route.snapshot.params.id,info)
       .subscribe(data => {
         this.Chercher();
       },  err => {
