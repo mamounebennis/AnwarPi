@@ -1,0 +1,99 @@
+<div class="limiter" xmlns="http://www.w3.org/1999/html">
+  <div class="container-login100">
+    <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
+					<span class="login100-form-title p-b-33">
+						Registration
+          </span>
+
+
+
+      <div class="container pl-5 pr-5">
+        <div class="alert alert-danger" *ngIf="mode==0 && errorMessage">
+          {{errorMessage}}<strong><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>!</strong>
+        </div>
+        <form class="login100-form validate-form" #f="ngForm" (ngSubmit)="onRegister(f.value)">
+          <div class="wrap-input100 validate-input">
+            <input type="text" name="username" [(ngModel)]="username" placeholder="Username" class="input100 ng-invalid ng-touched" autocomplete="off" required
+                   required minlength="5" #re="ngModel">
+            <div *ngIf="re.invalid && (re.dirty||re.touched)"
+                 class="alert alert-danger">
+              <div *ngIf="re.errors.required">
+                Ce champ est obligatoire.
+              </div>
+              <div *ngIf="re.errors.minlength">
+                Le champ doit faire au moins 5 caractères.
+              </div>
+            </div>
+            <span class="focus-input100-1"></span>
+            <span class="focus-input100-2"></span>
+          </div>
+
+          <div class="wrap-input100 validate-input">
+            <input type="email" name="email" [(ngModel)]="email" placeholder="Email" class="input100 ng-invalid ng-touched" autocomplete="off" required
+                   minlength="4"
+                   #ree="ngModel"/>
+            <div *ngIf="ree.invalid && (ree.dirty||ree.touched)"
+                 class="alert alert-danger">
+              <div *ngIf="ree.errors.required">
+                Ce champ est obligatoire.
+              </div>
+              <div *ngIf="ree.errors.minlength">
+                Le champ doit faire au moins 4 caractères.
+              </div>
+            </div>
+            <span class="focus-input100-1"></span>
+            <span class="focus-input100-2"></span>
+          </div>
+
+
+
+
+          <div class="wrap-input100 rs1 validate-input">
+            <input type="password" name="password" [(ngModel)]="password" placeholder="Mot de passe" class="input100 ng-invalid ng-touched" autocomplete="off"
+                   minlength="4"
+                   required #rea="ngModel"/>
+            <div *ngIf="rea.invalid && (rea.dirty||rea.touched)"
+                 class="alert alert-danger">
+              <div *ngIf="rea.errors.required">
+                Ce champ est obligatoire.
+              </div>
+              <div *ngIf="rea.errors.minlength">
+                Le champ doit faire au moins 6 caractères.
+              </div>
+            </div>
+            <span class="focus-input100-1"></span>
+            <span class="focus-input100-2"></span>
+          </div>
+          <div class="wrap-input100 rs1 validate-input">
+            <input type="password" name="repassword" ngModel="" placeholder="Répéter le mot de passe" class="input100 ng-invalid ng-touched" appConfirmationValidator="password" autocomplete="off" required
+                   #con="ngModel"/>
+            <div *ngIf="con.invalid && (con.dirty || con.touched)"
+                 class="alert alert-danger">
+              <div *ngIf="con.errors.required">
+                Ce champ est obligatoire.
+              </div>
+              <div *ngIf="con.errors.notEqual &&  !con.errors.required" >
+                La confirmation et le mot de passe ne sont pas identiques.
+              </div>
+            </div>
+            <span class="focus-input100-1"></span>
+            <span class="focus-input100-2"></span>
+          </div>
+
+
+
+          <div class="container-login100-form-btn m-t-20">
+            <button type="submit" class="login100-form-btn" [disabled]="!f.valid">S'inscrire</button>
+            <button (click)="retourlogin()" data-dismiss="modal" class="btn btn-secondary btn-lg btn-block" >Annuler</button>
+          </div>
+
+
+
+
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+</div>

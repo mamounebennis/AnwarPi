@@ -1,0 +1,19 @@
+li{
+  display: inline-block;
+  text-align: center;
+  padding: 13px 13px;
+  position: relative;
+  background-color: lightblue;
+}
+
+.current{
+  background-color: yellow;
+}
+.ng-invalid.ng-touched{
+  border-color: red;
+
+}
+
+select{
+
+}

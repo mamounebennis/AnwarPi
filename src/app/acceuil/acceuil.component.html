@@ -1,0 +1,160 @@
+
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top ">
+  <div class="container d-flex align-items-center">
+
+    <h1 class="logo mr-auto scrollto"><a href="">Forum</a></h1>
+
+    <nav class="nav-menu d-none d-lg-block">
+      <ul>
+        <li class="active"><a href="">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" style="font-size: 20px" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars"></i>
+                  {{this.moii}}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" style="font-size: 18px" href="#">Gestion du compte</a>
+                  <a class="dropdown-item" style="font-size: 18px" href="#">Parametre</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" style="font-size: 18px" (click)="logOut()" href="#">Se deconnecter</a>
+                </div>
+              </li>
+        <li><a href="/acc">Se deconnecter</a></li>
+
+      </ul>
+    </nav><!-- .nav-menu -->
+
+  </div>
+</header><!-- End Header -->
+
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+  <div class="hero-container">
+    <h3>Welcome to <strong>EmiForum</strong></h3>
+    <h1>Forum de l'EMI</h1>
+    <a href="#about" class="btn-get-started scrollto">Get Started</a>
+  </div>
+</section><!-- End Hero -->
+
+
+
+  <!-- ======= About Section ======= -->
+
+
+
+      <div class="section-title">
+        <h2>About</h2>
+        <h3>Consulter nos <span>forum</span></h3>
+      </div>
+      <div class="container">
+
+        <nav class="navbar navbar-light bg-light">
+          <form class="form-inline">
+            <button type="button" mdbBtn color="default" rounded="true" data-toggle="modal" data-target="#basicExample"
+                    (click)="show()" mdbWavesEffect>Ajouter un forum
+            </button>
+          </form>
+        </nav>
+        <br/>
+        <br/>
+
+        </div>
+
+        <br/>
+        <div style="margin-left: 600px;font-size: 50px"><strong>Nos forums</strong> </div>
+        <form  class="card-body col">
+          <div class="row">
+            <a class="col-md-6 caca"  (click)="redirect(p)" *ngFor="let p of ben" >
+              <div class="card mb-3 mt-2">
+                <div class="card-footer" style="font-size: 33px" >
+                  <span class="text-muted small"><strong>Nom du forum </strong>: {{p.titre}}</span><br/>
+                  <br/>
+                  <span  class="text-muted small"><strong> Titre</strong> :{{p.name}}</span><br/>
+                 </div>
+              </div>
+                        <br/>
+
+             </a>
+          </div>
+        </form>
+
+
+  <!-- ======= F.A.Q Section ======= -->
+
+
+
+<!-- ======= Footer ======= -->
+              <footer id="footer">
+
+                <div class="footer-top">
+                  <div class="container">
+                    <div class="row">
+
+                      <div class="col-lg-3 col-md-6 footer-contact">
+                        <h3>ForumEmi</h3>
+                        <p>
+                          Avenue Ibn Sina, Rabat <br>
+                          Maroc <br><br>
+                          <strong>Phone:</strong> +212537771905<br>
+                          <strong>Email:</strong> http://www.emi.ac.ma/<br>
+                        </p>
+                      </div>
+
+                      <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                        </ul>
+                      </div>
+
+                      <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Services</h4>
+                        <ul>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                        </ul>
+                      </div>
+
+                      <div class="col-lg-4 col-md-6 footer-newsletter">
+                        <h4>Join Our Newsletter</h4>
+                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+                        <form action="" method="post">
+                          <input type="email" name="email"><input type="submit" value="Subscribe">
+                        </form>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="container d-md-flex py-4">
+
+                  <div class="mr-md-auto text-center text-md-left">
+                    <div class="copyright">
+                      &copy; Copyright <strong><span>ForumEmi</span></strong>. All Rights Reserved
+                    </div>
+
+                  </div>
+                  <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                    <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                    <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                    <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                  </div>
+                </div>
+              </footer><!-- End Footer -->
+
+<a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+
